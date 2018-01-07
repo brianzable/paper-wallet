@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Paper Wallet Generator</title>
+    <script type="text/javascript" src="qrcode.min.js"></script>
+
+    <style>
+      @media print {
+        .no-print, .no-print * {
+          display: none !important;
+        }
+      }
+
+      input {
+        margin-left: 3px;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div style="max-width: 900px;">
+      <fieldset class="no-print">
+        <legend>Wallet Options</legend>
+
+        <label>Currency <input id="currency-name" type="text" /></label>
+        <label>Address <input id="address-input" type="text" /></label>
+        <label>Secret <input id="secret-input" type="text" /></label>
+
+        <button id="generate-button">Generate</button>
+      </fieldset>
+
+      <h2 id="currency-name-display"></h2>
+
+      <div style="float: left;">
+        <strong>Address</strong>
+        <div id="address"></div>
+        <div id="address-qr-code"></div>
+      </div>
+
+      <div style="float: right;">
+        <strong>Secret</strong>
+        <div id="secret"></div>
+        <div id="secret-qr-code"></div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
